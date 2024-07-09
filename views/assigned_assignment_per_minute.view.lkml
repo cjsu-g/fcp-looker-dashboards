@@ -1,6 +1,11 @@
 view: assigned_assignment_per_minute {
   sql_table_name: AssignmentStatusHistory ;;
 
+  filter: assigned {
+    type: yesno
+    sql: ${TABLE}.Status = 0 ;;
+  }
+
   dimension: population_name {
     type: string
     sql: ${TABLE}.PopulationName ;;
@@ -13,7 +18,7 @@ view: assigned_assignment_per_minute {
 
   dimension: status {
     type: string
-    sql: ${TABLE}.Status = 0 ;;
+    sql: ${TABLE}.Status ;;
   }
 
   dimension_group: created_time_minute {
