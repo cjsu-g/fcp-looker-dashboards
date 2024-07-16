@@ -12,7 +12,7 @@ view: apm_local_completed {
     sql: ${TABLE}.SessionId ;;
     filters: {
       field: status_number
-      value: "101"
+      value: "1"
     }
   }
 }
