@@ -1,34 +1,18 @@
+include: "apm_base.view"
 view: apm_canceled {
-  sql_table_name: AssignmentStatusHistory ;;
+  extends: [apm_base]
 
   filter: assigned {
     type: yesno
     sql: ${TABLE}.Status = 101 ;;
   }
 
-  dimension: population_name {
-    type: string
-    sql: ${TABLE}.PopulationName ;;
-  }
-
-  dimension: task_id {
-    type: number
-    sql: ${TABLE}.TaskId ;;
-  }
-
-  dimension: status {
-    type: string
-    sql: ${TABLE}.Status ;;
-  }
-
-  dimension_group: created_time_minute {
-    type: time
-    timeframes: [raw, minute]
-    sql: TIMESTAMP_TRUNC(${TABLE}.CreatedTime, MINUTE) ;;
-  }
-
   measure: count_per_minute {
     type: count_distinct
     sql: ${TABLE}.SessionId ;;
+    filters: {
+      field: status_number
+      value: "101"
+    }
   }
 }
