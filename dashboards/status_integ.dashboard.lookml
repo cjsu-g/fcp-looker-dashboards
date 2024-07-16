@@ -47,7 +47,7 @@
       task.total_iteration: 163
     defaults_version: 1
     listen:
-      Created Time Minute Minute: task.created_time_time
+      Created Time: task.created_time_time
       Population Name: task.population_name
     row: 0
     col: 0
@@ -61,7 +61,7 @@
     fields: [iteration.population_name, iteration.task_id, iteration.iteration_id,
       iteration.status, iteration.report_goal, iteration.min_client_version, iteration.max_client_version,
       iteration.max_aggregation_size]
-    sorts: [iteration.population_name]
+    sorts: [iteration.population_name, iteration.iteration_id desc]
     limit: 5000
     column_limit: 50
     show_view_names: false
@@ -135,7 +135,7 @@
     listen:
       Task ID: apm_assigned.task_id
       Population Name: apm_assigned.population_name
-      Created Time Minute Minute: apm_assigned.created_time_minute_minute
+      Created Time: apm_assigned.created_time_minute_minute
     row: 12
     col: 0
     width: 24
@@ -189,7 +189,7 @@
     listen:
       Task ID: apm_upload_completed.task_id
       Population Name: apm_upload_completed.population_name
-      Created Time Minute Minute: apm_upload_completed.created_time_minute_minute
+      Created Time: apm_upload_completed.created_time_minute_minute
     row: 19
     col: 0
     width: 24
@@ -208,8 +208,8 @@
     explore: apm_assigned
     listens_to_filters: []
     field: apm_assigned.population_name
-  - name: Created Time Minute Minute
-    title: Created Time Minute Minute
+  - name: Created Time
+    title: Created Time
     type: field_filter
     default_value: 1 week
     allow_multiple_values: true
