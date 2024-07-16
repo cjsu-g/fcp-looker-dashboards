@@ -6,6 +6,92 @@
   description: ''
   preferred_slug: qyLYtFHK7vJVs3NKLXinlc
   elements:
+  - title: Task
+    name: Task
+    model: fcp_integ
+    explore: task
+    type: looker_grid
+    fields: [task.population_name, task.task_id, task.status, task.min_aggregation_size,
+      task.max_aggregation_size, task.min_client_version, task.max_client_version,
+      task.total_iteration, task.created_time_time]
+    sorts: [task.created_time_time desc]
+    limit: 5000
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: '12'
+    rows_font_size: '12'
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_sql_query_menu_options: false
+    show_totals: true
+    show_row_totals: true
+    truncate_header: false
+    minimum_column_width: 75
+    series_column_widths:
+      task.task_id: 95
+      task.status: 114
+      task.min_aggregation_size: 165
+      task.max_aggregation_size: 184
+      task.min_client_version: 176
+      task.max_client_version: 178
+      task.total_iteration: 163
+    defaults_version: 1
+    listen:
+      Created Time Minute Minute: task.created_time_time
+      Population Name: task.population_name
+    row: 0
+    col: 0
+    width: 24
+    height: 6
+  - title: Iteration
+    name: Iteration
+    model: fcp_integ
+    explore: iteration
+    type: looker_grid
+    fields: [iteration.population_name, iteration.task_id, iteration.iteration_id,
+      iteration.status, iteration.report_goal, iteration.min_client_version, iteration.max_client_version,
+      iteration.max_aggregation_size]
+    sorts: [iteration.population_name]
+    limit: 5000
+    column_limit: 50
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: '12'
+    rows_font_size: '12'
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    show_sql_query_menu_options: false
+    show_totals: true
+    show_row_totals: true
+    truncate_header: false
+    minimum_column_width: 75
+    defaults_version: 1
+    listen:
+      Population Name: iteration.population_name
+      Task ID: iteration.task_id
+    row: 6
+    col: 0
+    width: 24
+    height: 6
   - title: Assigned Assignment Per Minute
     name: Assigned Assignment Per Minute
     model: fcp_integ
@@ -50,7 +136,7 @@
       Task ID: apm_assigned.task_id
       Population Name: apm_assigned.population_name
       Created Time Minute Minute: apm_assigned.created_time_minute_minute
-    row: 0
+    row: 12
     col: 0
     width: 24
     height: 7
@@ -104,7 +190,7 @@
       Task ID: apm_upload_completed.task_id
       Population Name: apm_upload_completed.population_name
       Created Time Minute Minute: apm_upload_completed.created_time_minute_minute
-    row: 7
+    row: 19
     col: 0
     width: 24
     height: 7
