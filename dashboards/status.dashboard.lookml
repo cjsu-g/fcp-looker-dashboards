@@ -13,7 +13,6 @@
     type: looker_line
     fields: [apm_assigned.created_time_minute_minute, apm_assigned.count_per_minute]
     fill_fields: [apm_assigned.created_time_minute_minute]
-    filters: {}
     sorts: [apm_assigned.created_time_minute_minute desc]
     limit: 5000
     column_limit: 50
@@ -55,8 +54,8 @@
     col: 0
     width: 24
     height: 7
-  - title: 'Upload Completed Assignment Per Minute '
-    name: 'Upload Completed Assignment Per Minute '
+  - title: Upload Completed Assignment Per Minute
+    name: Upload Completed Assignment Per Minute
     model: fcp_integ
     explore: apm_upload_completed
     type: looker_line
@@ -75,7 +74,7 @@
     show_x_axis_label: true
     show_x_axis_ticks: true
     y_axis_scale_mode: linear
-    x_axis_reversed: false
+    x_axis_reversed: true
     y_axis_reversed: false
     plot_size_by_field: false
     trellis: ''
@@ -102,6 +101,7 @@
     conditional_formatting_include_nulls: false
     defaults_version: 1
     listen:
+      Task ID: apm_upload_completed.task_id
       Population Name: apm_upload_completed.population_name
       Created Time Minute Minute: apm_upload_completed.created_time_minute_minute
     row: 7
