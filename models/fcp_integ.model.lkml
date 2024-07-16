@@ -19,6 +19,10 @@ explore: apm_canceled {
   sql_always_where: Status = 101 ;;
 }
 
+explore: apm_local_completed {
+  sql_always_where: Status = 1 ;;
+}
+
 explore: apm_local_failed {
   sql_always_where: Status = 102 ;;
 }

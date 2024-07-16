@@ -1,5 +1,5 @@
 include: "apm_base.view"
-view: local_completed_apm {
+view: apm_local_completed {
   extends: [apm_base]
 
   filter: assigned {

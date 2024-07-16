@@ -140,6 +140,60 @@
     col: 0
     width: 24
     height: 7
+  - title: Local Completed Assignment Per Minute
+    name: Local Completed Assignment Per Minute
+    model: fcp_integ
+    explore: apm_local_completed
+    type: looker_line
+    fields: [apm_local_completed.count_per_minute, apm_local_completed.created_time_minute_minute]
+    fill_fields: [apm_local_completed.created_time_minute_minute]
+    sorts: [apm_local_completed.created_time_minute_minute desc]
+    limit: 5000
+    column_limit: 50
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: true
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    limit_displayed_rows: false
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: ordinal
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    x_axis_zoom: true
+    y_axis_zoom: true
+    custom_color_enabled: true
+    show_single_value_title: true
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    enable_conditional_formatting: false
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    defaults_version: 1
+    listen:
+      Task ID: apm_local_completed.task_id
+      Population Name: apm_local_completed.population_name
+      Created Time: apm_local_completed.created_time_minute_minute
+    row: 19
+    col: 0
+    width: 24
+    height: 7
   - title: Upload Completed Assignment Per Minute
     name: Upload Completed Assignment Per Minute
     model: fcp_integ
@@ -190,7 +244,7 @@
       Task ID: apm_upload_completed.task_id
       Population Name: apm_upload_completed.population_name
       Created Time: apm_upload_completed.created_time_minute_minute
-    row: 19
+    row: 26
     col: 0
     width: 24
     height: 7
