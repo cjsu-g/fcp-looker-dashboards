@@ -2,6 +2,7 @@ connection: "task_db_integ"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+# include: "/dashboards/*.dashboard.lookml"
 
 datagroup: fcp_prod_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -29,7 +30,4 @@ explore: apm_upload_completed {
 }
 
 explore: apm_upload_timeout {
-}
-
-explore: assigned_assignment {
 }
