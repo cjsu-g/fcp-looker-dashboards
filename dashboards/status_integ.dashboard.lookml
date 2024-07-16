@@ -1,6 +1,6 @@
 ---
-- dashboard: status
-  title: Status
+- dashboard: status_integ
+  title: Status Integ
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
@@ -125,7 +125,7 @@
   - name: Created Time Minute Minute
     title: Created Time Minute Minute
     type: field_filter
-    default_value: 2024/06/26 22:57 to 2024/07/15 22:57
+    default_value: 1 week
     allow_multiple_values: true
     required: false
     ui_config:
