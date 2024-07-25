@@ -48,3 +48,7 @@ explore: task {
 
 explore: iteration{
 }
+
+explore: iteration_completion{
+  sql_always_where: Status = 0 or Status = 1;;
+}
