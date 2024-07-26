@@ -1,7 +1,7 @@
 connection: "task_db_integ"
 
 # include all the views
-include: "/views/**/*.view.lkml"
+include: "/views/task_db_views/*.view.lkml"
 include: "/dashboards/*.dashboard.lookml"
 
 datagroup: fcp_prod_default_datagroup {

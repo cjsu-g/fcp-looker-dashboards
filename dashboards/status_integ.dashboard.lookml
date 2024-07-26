@@ -8,7 +8,7 @@
   elements:
   - title: Task
     name: Task
-    model: fcp_integ
+    model: task_integ
     explore: task
     type: looker_grid
     fields: [task.population_name, task.task_id, task.status, task.min_aggregation_size,
@@ -55,7 +55,7 @@
     height: 6
   - title: Iteration
     name: Iteration
-    model: fcp_integ
+    model: task_integ
     explore: iteration
     type: looker_grid
     fields: [iteration.population_name, iteration.task_id, iteration.iteration_id,
@@ -94,7 +94,7 @@
     height: 6
   - title: Assigned Assignment Per Minute
     name: Assigned Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_assigned
     type: looker_line
     fields: [apm_assigned.created_time_minute_minute, apm_assigned.count_per_minute]
@@ -142,7 +142,7 @@
     height: 7
   - title: Local Completed Assignment Per Minute
     name: Local Completed Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_local_completed
     type: looker_line
     fields: [apm_local_completed.count_per_minute, apm_local_completed.created_time_minute_minute]
@@ -196,7 +196,7 @@
     height: 7
   - title: Upload Completed Assignment Per Minute
     name: Upload Completed Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_upload_completed
     type: looker_line
     fields: [apm_upload_completed.count_per_minute, apm_upload_completed.created_time_minute_minute]
@@ -250,7 +250,7 @@
     height: 7
   - title: Local Not Eligible Assignment Per Minute
     name: Local Not Eligible Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_local_not_eligible
     type: looker_line
     fields: [apm_local_not_eligible.count_per_minute, apm_local_not_eligible.created_time_minute_minute]
@@ -304,7 +304,7 @@
     height: 7
   - title: Local Timeout Assignment Per Minute
     name: Local Timeout Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_local_timeout
     type: looker_line
     fields: [apm_local_timeout.count_per_minute, apm_local_timeout.created_time_minute_minute]
@@ -358,7 +358,7 @@
     height: 7
   - title: Local Failed Assignment Per Minute
     name: Local Failed Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_local_not_eligible
     type: looker_line
     fields: [apm_local_not_eligible.count_per_minute, apm_local_not_eligible.created_time_minute_minute]
@@ -412,7 +412,7 @@
     height: 7
   - title: Canceled Assignment Per Minute
     name: Canceled Assignment Per Minute
-    model: fcp_integ
+    model: task_integ
     explore: apm_canceled
     type: looker_line
     fields: [apm_canceled.count_per_minute, apm_canceled.created_time_minute_minute]
@@ -466,7 +466,7 @@
     height: 7
   - title: Iteration Completion Time
     name: Iteration Completion Time
-    model: fcp_integ
+    model: task_integ
     explore: iteration_completion
     type: looker_line
     fields: [iteration_completion.iteration_id, iteration_completion.duration_in_minutes]
@@ -534,7 +534,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: fcp_integ
+    model: task_integ
     explore: apm_assigned
     listens_to_filters: []
     field: apm_assigned.population_name
@@ -548,7 +548,7 @@
       type: advanced
       display: popover
       options: []
-    model: fcp_integ
+    model: task_integ
     explore: apm_assigned
     listens_to_filters: []
     field: apm_assigned.created_time_minute_minute
@@ -561,7 +561,7 @@
     ui_config:
       type: range_slider
       display: inline
-    model: fcp_integ
+    model: task_integ
     explore: apm_assigned
     listens_to_filters: []
     field: apm_assigned.task_id
