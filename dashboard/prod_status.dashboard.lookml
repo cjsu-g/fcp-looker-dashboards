@@ -1,6 +1,6 @@
 ---
 - dashboard: prod_status
-  title: Prod Status
+  title: Task Status Prod
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
