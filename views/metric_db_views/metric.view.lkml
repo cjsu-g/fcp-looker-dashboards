@@ -16,10 +16,16 @@ view: metric {
     sql: ${TABLE}.IterationId ;;
   }
 
+
   dimension: metric_name {
     type: string
     sql: ${TABLE}.MetricName ;;
   }
+
+#  dimension: metric_name {
+#    type: string
+#    sql: CONCAT(${TABLE}.PopulationName, '-', CONCAT(CAST(${TABLE}.TaskId AS STRING), '-', ${TABLE}.MetricName)) ;;
+#  }
 
   dimension: metric_value {
     type: number
