@@ -22,13 +22,13 @@ view: metric {
     sql: ${TABLE}.MetricName ;;
   }
 
-#  dimension: metric_name {
-#    type: string
-#    sql: CONCAT(${TABLE}.PopulationName, '-', CONCAT(CAST(${TABLE}.TaskId AS STRING), '-', ${TABLE}.MetricName)) ;;
-#  }
+  dimension: population_task_metric {
+    type: string
+    sql: CONCAT(${TABLE}.PopulationName, '-', CONCAT(CAST(${TABLE}.TaskId AS STRING), '-', ${TABLE}.MetricName)) ;;
+  }
 
-  dimension: metric_value {
-    type: number
+  measure: metric_value {
+    type: min
     sql: ${TABLE}.MetricValue ;;
   }
 
