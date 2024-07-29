@@ -1,6 +1,6 @@
 ---
 - dashboard: status_integ
-  title: Status Integ
+  title: Task Status Integ
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
