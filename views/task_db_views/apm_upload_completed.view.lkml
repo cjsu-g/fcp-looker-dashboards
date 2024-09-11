@@ -2,6 +2,22 @@ include: "apm_base.view"
 view: apm_upload_completed {
   extends: [apm_base]
 
+  derived_table: {
+    sql:
+      SELECT
+        PopulationName,
+        TaskId,
+        IterationId,
+        SessionId,
+        Status,
+        MIN(A.CreatedTime) AS CreatedTime,
+      FROM
+        AssignmentStatusHistory as A
+      WHERE
+        Status = 2
+      GROUP BY SessionId, PopulationName, TaskId, IterationId, Status ;;
+  }
+
   filter: assigned {
     type: yesno
     sql: ${TABLE}.Status = 2 ;;

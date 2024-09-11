@@ -96,10 +96,10 @@
     name: Assigned Assignment Per Minute
     model: fcp_prod
     explore: apm_assigned
-    type: looker_line
+    type: looker_scatter
     fields: [apm_assigned.created_time_minute_minute, apm_assigned.count_per_minute]
     fill_fields: [apm_assigned.created_time_minute_minute]
-    sorts: [apm_assigned.created_time_minute_minute desc]
+    sorts: [apm_assigned.created_time_minute_minute]
     limit: 5000
     column_limit: 50
     x_axis_gridlines: false
@@ -112,7 +112,7 @@
     show_x_axis_label: true
     show_x_axis_ticks: true
     y_axis_scale_mode: linear
-    x_axis_reversed: true
+    x_axis_reversed: false
     y_axis_reversed: false
     plot_size_by_field: false
     trellis: ''
@@ -122,10 +122,11 @@
     point_style: none
     show_value_labels: false
     label_density: 25
-    x_axis_scale: ordinal
+    x_axis_scale: auto
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
+    x_axis_label: Created Time
     x_axis_zoom: true
     y_axis_zoom: true
     defaults_version: 1
@@ -144,10 +145,10 @@
     name: Local Completed Assignment Per Minute
     model: fcp_prod
     explore: apm_local_completed
-    type: looker_line
+    type: looker_scatter
     fields: [apm_local_completed.count_per_minute, apm_local_completed.created_time_minute_minute]
     fill_fields: [apm_local_completed.created_time_minute_minute]
-    sorts: [apm_local_completed.created_time_minute_minute desc]
+    sorts: [apm_local_completed.created_time_minute_minute]
     limit: 5000
     column_limit: 50
     x_axis_gridlines: false
@@ -160,7 +161,7 @@
     show_x_axis_label: true
     show_x_axis_ticks: true
     y_axis_scale_mode: linear
-    x_axis_reversed: true
+    x_axis_reversed: false
     y_axis_reversed: false
     plot_size_by_field: false
     trellis: ''
@@ -170,10 +171,11 @@
     point_style: none
     show_value_labels: false
     label_density: 25
-    x_axis_scale: ordinal
+    x_axis_scale: time
     y_axis_combined: true
     show_null_points: true
     interpolation: linear
+    x_axis_label: Created Time
     x_axis_zoom: true
     y_axis_zoom: true
     custom_color_enabled: true
@@ -541,7 +543,7 @@
   - name: Created Time
     title: Created Time
     type: field_filter
-    default_value: 1 week
+    default_value:
     allow_multiple_values: true
     required: false
     ui_config:
