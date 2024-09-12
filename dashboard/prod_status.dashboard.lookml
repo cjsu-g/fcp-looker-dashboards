@@ -473,7 +473,7 @@
     type: looker_line
     fields: [iteration_completion.iteration_id, iteration_completion.duration_in_minutes]
     sorts: [iteration_completion.duration_in_minutes desc 0]
-    limit: 5000
+    total: true
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
