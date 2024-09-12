@@ -50,5 +50,9 @@ explore: iteration{
 }
 
 explore: iteration_completion{
-  sql_always_where: Status = 0 or Status = 1;;
+  sql_always_where: Status = 0 or Status = 2;;
+}
+
+explore: iteration_aggregating_to_complete{
+  sql_always_where: Status = 1 or Status = 2;;
 }
