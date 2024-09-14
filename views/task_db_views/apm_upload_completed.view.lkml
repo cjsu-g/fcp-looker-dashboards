@@ -18,17 +18,12 @@ view: apm_upload_completed {
       GROUP BY SessionId, PopulationName, TaskId, IterationId, Status ;;
   }
 
-  filter: assigned {
-    type: yesno
-    sql: ${TABLE}.Status = 2 ;;
-  }
-
   measure: count_per_minute {
     type: count_distinct
     sql: ${TABLE}.SessionId ;;
     filters: {
-      field: status_number
-      value: "2"
+    field: status_number
+    value: "2"
     }
   }
 }
